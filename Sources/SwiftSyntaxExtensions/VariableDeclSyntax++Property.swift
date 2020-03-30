@@ -14,8 +14,8 @@ extension VariableDeclSyntax {
     }
     
     public var variableName: String? {
-        guard let binding = self.bindings.first(where: { $0.pattern is IdentifierPatternSyntax }),
-            let pattern = binding.pattern as? IdentifierPatternSyntax else {
+        guard let binding = self.bindings.first(where: { $0.pattern.is(IdentifierPatternSyntax.self) }),
+            let pattern = binding.pattern.as(IdentifierPatternSyntax.self) else {
                 return nil
         }
         return String(pattern.identifier.text

@@ -18,7 +18,6 @@ extension TriviaPiece {
              .newlines,
              .carriageReturns,
              .carriageReturnLineFeeds,
-             .backticks,
              .garbageText:
             return nil
         case .lineComment(let comment),
